@@ -111,7 +111,10 @@ class Compiler {
       normalize(`${this.tmp_apk_path}/${pathToAssembly}/assemblies.manifest`)
     );
 
-    rmSync(normalize(`${this.tmp_apk_path}/${pathToAssembly}/out`));
+    rmSync(normalize(`${this.tmp_apk_path}/${pathToAssembly}/out`), {
+      recursive: true,
+      force: true,
+    });
   }
 
   async onBlobVersion() {

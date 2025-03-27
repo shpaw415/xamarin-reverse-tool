@@ -12,7 +12,7 @@ export default async function Decompile(path: string, outdir: string) {
     console.log(err);
     process.exit(1);
   }
-  if (await isBlobVersion(path)) {
+  if (await isBlobVersion(outdir)) {
     Bun.spawnSync({
       cmd: ["pyxamstore", "unpack"],
       cwd: normalize(`${outdir}${pathToAssembly}`),

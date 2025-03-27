@@ -110,11 +110,12 @@ class Compiler {
       ),
       normalize(`${this.tmp_apk_path}/${pathToAssembly}/assemblies.manifest`)
     );
+
+    rmSync(normalize(`${this.tmp_apk_path}/${pathToAssembly}/out`));
   }
 
   async onBlobVersion() {
     if ((await isBlobVersion(this.apk_path)) == false) return;
-
     this.compileBlob();
   }
   cleanup() {

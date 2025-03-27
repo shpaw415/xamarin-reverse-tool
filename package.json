@@ -1,0 +1,20 @@
+{
+  "name": "reverse-tool",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "commander": "^13.1.0"
+  },
+  "scripts": {
+    "apktool": "java -jar ./src/apktool.jar",
+    "objection": "objection",
+    "pyxamstore": "pyxamstore"
+  }
+}
